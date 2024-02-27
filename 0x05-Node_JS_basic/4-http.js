@@ -1,12 +1,15 @@
 const http = require('http');
 
 const app = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello Holberton School!\n');
+  const responseText = 'Hello Holberton School!';
+
+  res.setHeader('Content-Type', 'text/plain');
+  res.setHeader('Content-Length', responseText.length);
+  res.statusCode = 200;
+  res.write(Buffer.from(responseText));
 });
 
-app.listen(1245, 'localhost', () => {
-});
+app.listen(1245);
 
 module.exports = app;
 
