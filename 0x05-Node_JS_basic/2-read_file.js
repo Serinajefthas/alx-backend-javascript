@@ -1,8 +1,10 @@
+/* eslint-disable no-param-reassign */
 const fs = require('fs');
 
 /** 
  * count number students from csv db file
  * @param {String} dataPath to db file
+ * @throws {Error} If the database cannot be loaded.
  */
 const countStudents = (dataPath) => {
   if (!fs.existsSync(dataPath)) {
