@@ -1,8 +1,8 @@
 const fs = require('fs');
 
 /** 
- * count number students from csv db
- * @param {String} path to db file
+ * count number students from csv db file
+ * @param {String} dataPath to db file
  */
 const countStudents = (dataPath) => {
   if (!fs.existsSync(dataPath)) {
